@@ -35,30 +35,3 @@ mi-portal/
 | Tabla con thead/tbody/tfoot, 5+ filas, 4+ columnas | `tabla.html` |
 | 6+ cards de Bootstrap | `index.html` (6) y `informacion.html` (3) |
 
-## Cómo verlo en tu computador
-
-Abre `index.html` con doble clic, o en VS Code usa la extensión **Live Server**.
-
-## Cómo publicarlo en GitHub Pages
-
-1. Crea un repositorio nuevo en GitHub (por ejemplo `portal-turistico`).
-2. Sube **el contenido** de esta carpeta a la raíz del repositorio (que `index.html` quede en la raíz):
-   ```bash
-   git init
-   git add .
-   git commit -m "Portal turístico"
-   git branch -M main
-   git remote add origin https://github.com/TU_USUARIO/portal-turistico.git
-   git push -u origin main
-   ```
-3. En GitHub ve a **Settings → Pages**, en *Build and deployment* elige **Deploy from a branch**, rama `main` y carpeta `/ (root)`, y guarda.
-4. Espera 1–2 minutos. Tu sitio quedará en `https://TU_USUARIO.github.io/portal-turistico/`.
-
-Alternativa: arrastra la carpeta a [Netlify Drop](https://app.netlify.com/drop).
-
-## Antes de entregar
-
-- Cambia el autor en `<meta name="author">` si quieres poner tu nombre completo (está como "Santiago").
-- Valida cada página en <https://validator.w3.org/> (la guía pide cero errores).
-- Prueba el sitio publicado en el celular y revisa que carguen imágenes, video y estilos.
-- Los precios de la tabla y el correo de contacto son de ejemplo.
