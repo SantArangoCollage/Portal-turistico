@@ -1,0 +1,349 @@
+/* ==========================================================
+   Rumbo Colombia — Hoja de estilos propia
+   Complementa a Bootstrap 5 (se carga antes que este archivo)
+   ========================================================== */
+
+/* ---------- Variables globales (colores y tipografías) ---------- */
+:root {
+  --color-primario: #0b6e4f;      /* verde selva */
+  --color-primario-oscuro: #08523b;
+  --color-secundario: #f4a300;    /* amarillo sol */
+  --color-acento: #d1495b;        /* rojo cálido */
+  --color-mar: #127a9b;           /* azul caribe */
+  --color-oscuro: #1b2a2f;
+  --color-claro: #fdf8ef;
+  --color-texto: #26363b;
+  --color-borde: #e4dccb;
+
+  --fuente-titulos: "Poppins", "Segoe UI", Arial, sans-serif;
+  --fuente-texto: "Open Sans", "Segoe UI", Arial, sans-serif;
+
+  --radio: 14px;
+  --sombra: 0 6px 18px rgba(27, 42, 47, 0.12);
+}
+
+/* ---------- Base ---------- */
+body {
+  font-family: var(--fuente-texto);
+  color: var(--color-texto);
+  background-color: var(--color-claro);
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, .navbar-brand {
+  font-family: var(--fuente-titulos);
+  color: var(--color-oscuro);
+  line-height: 1.25;
+}
+
+a { color: var(--color-primario); }
+a:hover { color: var(--color-primario-oscuro); }
+
+/* Enlace "saltar al contenido" (accesibilidad) */
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -4rem;
+  z-index: 2000;
+  background: var(--color-secundario);
+  color: var(--color-oscuro);
+  padding: 0.6rem 1rem;
+  border-radius: 0 0 8px 8px;
+  font-weight: 600;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 0; }
+
+:focus-visible {
+  outline: 3px solid var(--color-secundario);
+  outline-offset: 2px;
+}
+
+/* ---------- Barra de navegación ---------- */
+.barra-nav {
+  background-color: var(--color-primario);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+.barra-nav .navbar-brand {
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.barra-nav .navbar-brand img { width: 38px; height: 38px; }
+.barra-nav .nav-link {
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+}
+.barra-nav .nav-link:hover,
+.barra-nav .nav-link:focus { color: #fff; background: rgba(255, 255, 255, 0.14); }
+.barra-nav .nav-link.active {
+  color: var(--color-oscuro);
+  background: var(--color-secundario);
+}
+.barra-nav .navbar-toggler { border-color: rgba(255, 255, 255, 0.6); }
+.barra-nav .navbar-toggler-icon { filter: invert(1); }
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background:
+    linear-gradient(100deg, rgba(20, 20, 40, 0.78) 0%, rgba(20, 20, 40, 0.25) 70%),
+    url("../img/hero.jpg") center / cover no-repeat;
+}
+.hero h1 {
+  color: #fff;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  max-width: 18ch;
+}
+.hero .lead { max-width: 52ch; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5); }
+.hero-kicker {
+  display: inline-block;
+  background: var(--color-secundario);
+  color: var(--color-oscuro);
+  font-family: var(--fuente-titulos);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.8rem;
+  border-radius: 50px;
+}
+
+.cabecera-pagina {
+  background:
+    linear-gradient(120deg, rgba(8, 82, 59, 0.92), rgba(18, 122, 155, 0.85)),
+    url("../img/hero.jpg") center / cover no-repeat;
+  color: #fff;
+  padding: 3.5rem 0 3rem;
+}
+.cabecera-pagina h1 { color: #fff; font-weight: 700; }
+.cabecera-pagina p { max-width: 60ch; margin-bottom: 0; opacity: 0.95; }
+
+/* ---------- Secciones ---------- */
+.seccion { padding: 3.5rem 0; }
+.seccion-alt { background: #fff; }
+.titulo-seccion { font-weight: 700; margin-bottom: 0.4rem; }
+.titulo-seccion::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  background: var(--color-secundario);
+}
+
+/* ---------- Accesos rápidos (Flexbox) ---------- */
+.accesos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+.accesos li { flex: 1 1 200px; }
+.acceso {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  height: 100%;
+  padding: 1rem 1.2rem;
+  background: #fff;
+  border: 2px solid var(--color-borde);
+  border-radius: var(--radio);
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--color-oscuro);
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.acceso:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-primario);
+  box-shadow: var(--sombra);
+  color: var(--color-primario-oscuro);
+}
+.acceso-icono {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--color-primario);
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+/* ---------- Tarjetas (Bootstrap Card + estilos propios) ---------- */
+.card {
+  border: 0;
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.card:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(27, 42, 47, 0.18); }
+.card-img-top { aspect-ratio: 3 / 2; object-fit: cover; }
+.card-title { font-weight: 600; }
+.etiqueta {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-mar);
+}
+.btn-principal {
+  background: var(--color-primario);
+  border-color: var(--color-primario);
+  color: #fff;
+  font-weight: 600;
+}
+.btn-principal:hover, .btn-principal:focus {
+  background: var(--color-primario-oscuro);
+  border-color: var(--color-primario-oscuro);
+  color: #fff;
+}
+
+/* ---------- Aside / recuadros ---------- */
+.aside-caja {
+  background: #fff;
+  border-left: 6px solid var(--color-secundario);
+  border-radius: var(--radio);
+  padding: 1.4rem 1.5rem;
+  box-shadow: var(--sombra);
+}
+.aside-caja h2, .aside-caja h3 { font-size: 1.15rem; font-weight: 700; }
+.aside-caja ul { padding-left: 1.2rem; margin-bottom: 0; }
+
+.articulo-texto {
+  background: #fff;
+  border-radius: var(--radio);
+  padding: 1.6rem 1.8rem;
+  box-shadow: var(--sombra);
+  height: 100%;
+}
+.articulo-texto h3 { font-size: 1.25rem; font-weight: 600; color: var(--color-primario); }
+
+/* ---------- Galería (CSS Grid) ---------- */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+.galeria-grid figure {
+  margin: 0;
+  border-radius: var(--radio);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--sombra);
+}
+.galeria-grid a { display: block; overflow: hidden; }
+.galeria-grid img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+.galeria-grid a:hover img { transform: scale(1.07); }
+.galeria-grid figcaption {
+  padding: 0.7rem 1rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-oscuro);
+}
+.video-marco {
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  background: #000;
+}
+.video-marco video { width: 100%; display: block; }
+
+/* ---------- Tabla ---------- */
+.tabla-portal {
+  margin-bottom: 0;
+  background: #fff;
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+.tabla-portal caption {
+  caption-side: top;
+  padding: 0.6rem 0.2rem;
+  font-weight: 600;
+  color: var(--color-oscuro);
+}
+.tabla-portal thead th {
+  background: var(--color-primario);
+  color: #fff;
+  font-family: var(--fuente-titulos);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.tabla-portal tbody tr:nth-child(even) { background: #f6f1e4; }
+.tabla-portal tbody tr:hover { background: #fdeccb; }
+.tabla-portal tfoot td, .tabla-portal tfoot th {
+  background: var(--color-oscuro);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ---------- Formulario ---------- */
+.form-control, .form-select {
+  border: 2px solid var(--color-borde);
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem;
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 0.25rem rgba(11, 110, 79, 0.2);
+}
+.form-label { font-weight: 600; }
+.contador { font-size: 0.85rem; color: #5b6b70; }
+.contador.ok { color: var(--color-primario); font-weight: 600; }
+#resultado:empty { display: none; }
+
+/* ---------- Pie de página ---------- */
+.pie {
+  background: var(--color-oscuro);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 2.5rem 0 1.2rem;
+}
+.pie h2 { color: #fff; font-size: 1.1rem; }
+.pie a { color: var(--color-secundario); text-decoration: none; }
+.pie a:hover { text-decoration: underline; color: #ffd36b; }
+.pie-enlaces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pie-copy {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  font-size: 0.88rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 767.98px) {
+  .hero { min-height: 65vh; }
+  .seccion { padding: 2.5rem 0; }
+  .articulo-texto { padding: 1.2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}

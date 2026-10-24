@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto | Rumbo Colombia</title>
+  <meta name="description" content="Contáctanos para planear tu viaje por Colombia. Escribe tu consulta y elige tu destino de interés.">
+  <meta name="keywords" content="contacto, formulario, reservas, consultas, turismo">
+  <meta name="author" content="Santiago Arango Arbelaez">
+  <meta property="og:title" content="Contacto | Rumbo Colombia">
+  <meta property="og:description" content="Contáctanos para planear tu viaje por Colombia. Escribe tu consulta y elige tu destino de interés.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;family=Poppins:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+  <header>
+    <nav class="navbar navbar-expand-lg barra-nav" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="img/logo.svg" alt="Logo de Rumbo Colombia" width="38" height="38">
+          <span>Rumbo Colombia</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Abrir o cerrar el menú de navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="informacion.html">Información</a></li>
+          <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="tabla.html">Tarifas</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="cabecera-pagina" aria-labelledby="titulo-pagina">
+      <div class="container">
+        <h1 id="titulo-pagina">Contacto</h1>
+        <p class="lead">Cuéntanos qué destino te interesa y te ayudamos a planear tu viaje.</p>
+      </div>
+    </section>
+
+    <section class="seccion" aria-labelledby="form-titulo">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <article class="articulo-texto">
+              <h2 id="form-titulo" class="h3">Formulario de contacto</h2>
+              <p id="form-ayuda">Los campos marcados con <span aria-hidden="true">*</span> son obligatorios.</p>
+
+              <form id="form-contacto" novalidate aria-describedby="form-ayuda">
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">Nombre completo *</label>
+                  <input type="text" class="form-control" id="nombre" name="nombre" autocomplete="name" required aria-describedby="nombre-ayuda nombre-error">
+                  <div id="nombre-ayuda" class="form-text">Mínimo 3 caracteres.</div>
+                  <div id="nombre-error" class="invalid-feedback" aria-live="polite"></div>
+                  <div class="valid-feedback">¡Se ve bien!</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Correo electrónico *</label>
+                  <input type="email" class="form-control" id="email" name="email" autocomplete="email" required aria-describedby="email-ayuda email-error">
+                  <div id="email-ayuda" class="form-text">Por ejemplo: nombre@dominio.com</div>
+                  <div id="email-error" class="invalid-feedback" aria-live="polite"></div>
+                  <div class="valid-feedback">¡Correo válido!</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="destino" class="form-label">Destino de interés *</label>
+                  <select class="form-select" id="destino" name="destino" required aria-describedby="destino-error">
+                    <option value="" selected>Selecciona una opción</option>
+                    <option value="Cartagena de Indias">Cartagena de Indias</option>
+                    <option value="Medellín">Medellín</option>
+                    <option value="Valle del Cocora">Valle del Cocora</option>
+                    <option value="Parque Tayrona">Parque Tayrona</option>
+                    <option value="San Andrés">San Andrés</option>
+                    <option value="Guatapé">Guatapé</option>
+                  </select>
+                  <div id="destino-error" class="invalid-feedback" aria-live="polite"></div>
+                  <div class="valid-feedback">Destino seleccionado.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="mensaje" class="form-label">Mensaje *</label>
+                  <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required aria-describedby="contador-mensaje mensaje-error"></textarea>
+                  <div id="contador-mensaje" class="contador" aria-live="off">0 / 20 caracteres mínimos</div>
+                  <div id="mensaje-error" class="invalid-feedback" aria-live="polite"></div>
+                  <div class="valid-feedback">Mensaje completo.</div>
+                </div>
+
+                <div class="form-check mb-4">
+                  <input class="form-check-input" type="checkbox" id="acepto" name="acepto" required aria-describedby="acepto-error">
+                  <label class="form-check-label" for="acepto">Acepto el tratamiento de mis datos para recibir información del viaje. *</label>
+                  <div id="acepto-error" class="invalid-feedback" aria-live="polite"></div>
+                </div>
+
+                <div class="d-flex flex-wrap gap-2">
+                  <button type="submit" class="btn btn-principal btn-lg">Enviar mensaje</button>
+                  <button type="reset" class="btn btn-outline-secondary btn-lg">Limpiar</button>
+                </div>
+
+                <div id="resultado" role="status" aria-live="polite"></div>
+              </form>
+            </article>
+          </div>
+
+          <div class="col-lg-4">
+            <aside class="aside-caja" aria-labelledby="datos-titulo">
+              <h2 id="datos-titulo">Datos de contacto</h2>
+              <ul>
+                <li>Correo: <a href="mailto:hola@rumbocolombia.example">hola@rumbocolombia.example</a></li>
+                <li>Atención: lunes a viernes, de 8:00 a. m. a 6:00 p. m.</li>
+                <li>Respondemos en máximo 24 horas hábiles.</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-5">
+          <h2>Rumbo Colombia</h2>
+          <p class="mb-0">Portal turístico de ejemplo creado para la asignatura Herramientas de Programación III. Los textos son originales; las fotografías provienen de bancos de imágenes de uso libre.</p>
+        </div>
+        <div class="col-md-4">
+          <h2>Navega</h2>
+          <ul class="pie-enlaces">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="informacion.html">Información</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="tabla.html">Tarifas</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h2>Escríbenos</h2>
+          <p class="mb-0"><a href="mailto:hola@rumbocolombia.example">hola@rumbocolombia.example</a></p>
+        </div>
+      </div>
+      <p class="pie-copy mb-0">&copy; <span id="anio">2026</span> Rumbo Colombia. Proyecto académico, sin fines comerciales.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

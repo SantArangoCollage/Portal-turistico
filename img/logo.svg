@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Logo Rumbo Colombia">
+  <circle cx="32" cy="32" r="30" fill="#0b6e4f"/>
+  <circle cx="32" cy="26" r="11" fill="#f4a300"/>
+  <path d="M4 40 Q16 32 28 40 T52 40 T64 38 V64 H4 Z" fill="#127a9b"/>
+  <path d="M4 48 Q16 41 28 48 T52 48 T64 46 V60 H4 Z" fill="#0d5c7a"/>
+  <path d="M32 10 L35 30 L32 34 L29 30 Z" fill="#fdf8ef"/>
+</svg>
