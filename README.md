@@ -13,7 +13,7 @@ mi-portal/
 ├── contacto.html       Formulario con validación en JavaScript
 ├── css/style.css       Estilos propios con variables :root
 ├── js/script.js        Validación del formulario y visor de galería
-├── img/                Ilustraciones originales y logo
+├── img/                Las fotografías provienen de bancos de imágenes de uso libre y el logo
 └── media/              Video, subtítulos (.vtt) y póster
 ```
 
